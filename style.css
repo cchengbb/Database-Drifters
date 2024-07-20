@@ -40,7 +40,6 @@ nav ul li a:hover, nav ul li a:focus {
     color: #333; /* Dark text color on hover/focus for better readability */
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 600px) {
     nav ul {
@@ -50,7 +49,41 @@ nav ul li a:hover, nav ul li a:focus {
     }
 }
 
+.welcome-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+.about-pages{
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.about-pages h2{
+    text-align: center;
+}
+.about-pages ul li {
+    text-align: left;
+}
+.welcome-container h1, .about-pages h2 {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
 body {
     background-image: url('images/background.jpg');
     background-size: cover;
@@ -136,7 +169,7 @@ p.display-all-link a:hover, p.display-all-link a:focus {
 #searchDogs input[type="text"] {
     padding: 10px;
     margin-right: 10px; /* Spacing between the input field and the button */
-    width: 200px; /* Set width of the input field */
+    width: auto; /* Set width of the input field */
     border: 2px solid #ccc; /* Border styling */
     border-radius: 4px; /* Rounded corners for the input field */
 }
@@ -154,6 +187,15 @@ p.display-all-link a:hover, p.display-all-link a:focus {
     background-color: #555; /* Slightly lighter background on hover */
 }
 
+#searchAdopters button {
+    padding: 10px 20px;
+    background-color: #333; /* Dark background for the button */
+    color: burlywood; /* White text color for contrast */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
 #addDogButtonContainer button {
     padding: 10px 20px;
     background-color: #333;
@@ -167,6 +209,18 @@ p.display-all-link a:hover, p.display-all-link a:focus {
     background-color: #555;
 }
 
+#addAdopterButtonContainer button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: burlywood;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addAdopterButtonContainer button:hover {
+    background-color: #555;
+}
 .search-form {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;

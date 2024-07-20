@@ -9,36 +9,30 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="dogs.html">Dogs</a></li>
             <li><a href="adopters.html">Adopters</a></li>
+            <li><a href="dogs.html">Dogs</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="locations.html">Locations</a></li>
             <li><a href="vaccinations.html">Vaccinations</a></li>
         </ul>
     </nav>
-<form action="/add-dog" method="POST">
-    <legend>Add Dog</legend>
-    <fieldset class="fields">
-        <label for="dogName">Dog Name:</label>
-        <input type="text" id="dogName" name="dogName" required><br>
-
-        <label for="breed">Breed:</label>
-        <input type="text" id="breed" name="breed" required><br>
-
-        <label for="sex">Sex:</label>
-        <input type="text" id="sex" name="sex" required><br>
-
-        <label for="dateOfBirth">Date of Birth:</label>
-        <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
-
-        <label for="healthStatus">Health Status:</label>
-        <input type="text" id="healthStatus" name="healthStatus" required><br>
-
-        <label for="adopterID">Adopter ID (Optional):</label>
-        <input type="number" id="adopterID" name="adopterID"><br>
-    </fieldset>
-    <input class="btn" type="submit" value="Add Dog">
-    <input class="btn" type="button" value="Cancel" onclick="location.href='index.html';">
-</form>
+    <div class="welcome-container">
+        <h1>Welcome to Furever Dog Adoptions</h1>
+        <p>Welcome to our website! Furever Dog Adoptions aims to connect loving homes with adoptable dogs. Navigate through our site to find all the information you need to adopt, participate, and help.</p>
+    </div>
+    <div class="about-pages">
+        <h2>About Our Pages</h2>
+        <ul>
+            <li><strong>Home:</strong> Start here to learn about our mission and access all sections of the site.</li>
+            <li><strong>Adopters:</strong> Information on current and potential dog adopters. This page includes details on how to become an adopter and profiles of current adopters.</li>
+            <li><strong>Dogs:</strong> View details about each dog under our care, including their health status, breed, and availability for adoption.</li>
+            <li><strong>Events:</strong> Find out about upcoming events where you can meet our dogs in person and participate in our community efforts to find homes for them.</li>
+            <li><strong>Locations:</strong> Information on our various locations where dogs are housed and where events take place.</li>
+            <li><strong>Vaccinations:</strong> Detailed records of vaccinations for each dog, ensuring they are healthy and ready for adoption.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 Roy Huynh, Colin Cheng. All rights reserved.</p>
+    </footer>
 </body>
 </html>
