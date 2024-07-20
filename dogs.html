@@ -268,12 +268,22 @@ document.getElementById('searchQuery').addEventListener('keyup', filterDogs);
             <button type="button" onClick="browseDogs()">Cancel</button>
         </form>
     </div>
-    <!-- Search Form -->
-    <div id="searchDogs">
-        <form action="/search-dogs" method="GET">
-            <input type="text" id="searchQuery" name="searchQuery" placeholder="Search Dogs by name, breed..." required>
+<!-- Search Form -->
+<div id="searchDogs" style="text-align: center; margin-top: 20px;">
+    <form action="/search-dogs" method="GET" class="search-form">
+        <fieldset>
+            <legend><strong>Search Dogs</strong></legend>
+            <label for="searchCategory">Search By:</label>
+            <select id="searchCategory" name="searchCategory" required>
+                <option value="name">Name</option>
+                <option value="breed">Breed</option>
+                <option value="age">Age</option>
+            </select>
+            <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter search term..." required>
             <button type="submit">Search</button>
-        </form>
-    </div>
+        </fieldset>
+    </form>
+</div>
+
 </body>
 </html>
