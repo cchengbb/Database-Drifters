@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Dog</title>
+    <title>Furever Dog Adoptions</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1>Add Dog</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dogs.html">Dogs</a></li>
+            <li><a href="adopters.html">Adopters</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="vaccinations.html">Vaccinations</a></li>
+        </ul>
+    </nav>
 <form action="/add-dog" method="POST">
+    <legend>Add Dog</legend>
     <fieldset class="fields">
         <label for="dogName">Dog Name:</label>
         <input type="text" id="dogName" name="dogName" required><br>
