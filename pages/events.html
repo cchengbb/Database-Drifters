@@ -16,10 +16,14 @@
         <a href="events.html">Events</a>
         <a href="locations.html">Locations</a>
         <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
     </nav>
 
     <section class="container">
         <button id="toggleFormButton">Add/Update Event</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+        
         <form data-entity="event" class="entity-form">
             <div class="form-group">
                 <label for="eventId">Event ID:</label>
@@ -59,7 +63,10 @@
                 <td>Tuxes and Tails</td>
                 <td>2024-05-17</td>
                 <td>Annual fundraising gala showcasing pets and hosting live auctions</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>2</td>
@@ -67,7 +74,10 @@
                 <td>Adoption Day</td>
                 <td>2024-09-01</td>
                 <td>Annual Adoption Event</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
@@ -75,7 +85,10 @@
                 <td>Fun Walk</td>
                 <td>2024-10-05</td>
                 <td>Community Walk for Dogs and Adopters</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>4</td>
@@ -83,7 +96,10 @@
                 <td>Fundraiser Gala</td>
                 <td>2024-11-15</td>
                 <td>Gala to raise Funds for FCAT Shelter</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
         </table>
     </section>

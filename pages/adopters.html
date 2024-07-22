@@ -16,10 +16,14 @@
         <a href="events.html">Events</a>
         <a href="locations.html">Locations</a>
         <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
     </nav>
 
     <section class="container">
         <button id="toggleFormButton">Add/Update Adopter</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+
         <form data-entity="adopter" class="entity-form">
             <div class="form-group">
                 <label for="adopterId">Adopter ID:</label>
@@ -59,7 +63,10 @@
                 <td>Williamson</td>
                 <td>swilliamson@toktokmail.com</td>
                 <td>(162) 181-0503</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>2</td>
@@ -67,15 +74,21 @@
                 <td>Randall</td>
                 <td>iamkathleen@networkofemails.org</td>
                 <td>(988) 431-8038</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Claude</td>
                 <td>Herman</td>
                 <td>hermanclaude@example.com</td>
-                <td>(738) 630-6257)</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>(738) 630-6257</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>4</td>
@@ -83,7 +96,10 @@
                 <td>Payne</td>
                 <td>nopaynenogain@hotrod.net</td>
                 <td>(922) 377-1535</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>5</td>
@@ -91,7 +107,10 @@
                 <td>Montgomery</td>
                 <td>montg.alyson5@totallyrealdomain.com</td>
                 <td>(726) 296-1782</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
         </table>
     </section>

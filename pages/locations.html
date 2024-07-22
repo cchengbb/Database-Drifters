@@ -16,10 +16,14 @@
         <a href="events.html">Events</a>
         <a href="locations.html">Locations</a>
         <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
     </nav>
 
     <section class="container">
         <button id="toggleFormButton">Add/Update Location</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+
         <form data-entity="location" class="entity-form">
             <div class="form-group">
                 <label for="locationId">Location ID:</label>
@@ -65,7 +69,10 @@
                 <td>Bellevue</td>
                 <td>WA</td>
                 <td>98005</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>2</td>
@@ -74,7 +81,10 @@
                 <td>Tacoma</td>
                 <td>WA</td>
                 <td>98409</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
@@ -83,7 +93,10 @@
                 <td>Winston</td>
                 <td>OR</td>
                 <td>97496</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>4</td>
@@ -92,7 +105,10 @@
                 <td>Roseburg</td>
                 <td>OR</td>
                 <td>97471</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
         </table>
     </section>

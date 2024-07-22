@@ -16,10 +16,14 @@
         <a href="events.html">Events</a>
         <a href="locations.html">Locations</a>
         <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
     </nav>
 
     <section class="container">
         <button id="toggleFormButton">Add/Update Vaccination</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+
         <form data-entity="vaccination" class="entity-form">
             <div class="form-group">
                 <label for="vaccinationId">Vaccination ID:</label>
@@ -53,28 +57,40 @@
                 <td>1</td>
                 <td>Rabies</td>
                 <td>2023-07-15</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>2</td>
                 <td>Distemper</td>
                 <td>2023-08-20</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>1</td>
                 <td>Parvovirus</td>
                 <td>2023-07-15</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>3</td>
                 <td>Hepatitis</td>
                 <td>2024-01-20</td>
-                <td><button onclick="editEntity(this)">Edit</button></td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
             </tr>
         </table>
     </section>
