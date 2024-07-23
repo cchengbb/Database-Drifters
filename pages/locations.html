@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations</title>
+    <link href="../style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Locations</h1>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="dogs.html">Dogs</a>
+        <a href="adopters.html">Adopters</a>
+        <a href="events.html">Events</a>
+        <a href="locations.html">Locations</a>
+        <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
+    </nav>
+
+    <section class="container">
+        <button id="toggleFormButton">Add/Update Location</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+
+        <form data-entity="location" class="entity-form">
+            <div class="form-group">
+                <label for="locationId">Location ID:</label>
+                <input type="text" id="locationId" name="locationId" required>
+            </div>
+            <div class="form-group">
+                <label for="address1">Address 1:</label>
+                <input type="text" id="address1" name="address1" required>
+            </div>
+            <div class="form-group">
+                <label for="address2">Address 2:</label>
+                <input type="text" id="address2" name="address2">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" name="postalCode" required>
+            </div>
+            <button type="submit">Add/Update Location</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Location ID</th>
+                <th>Address 1</th>
+                <th>Address 2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Postal Code</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>13212 SE Eastgate Way</td>
+                <td>NULL</td>
+                <td>Bellevue</td>
+                <td>WA</td>
+                <td>98005</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2608 Center St, Tacoma</td>
+                <td>NULL</td>
+                <td>Tacoma</td>
+                <td>WA</td>
+                <td>98409</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>60 SE Main St</td>
+                <td>NULL</td>
+                <td>Winston</td>
+                <td>OR</td>
+                <td>97496</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>450 Old Del Rio Rd</td>
+                <td>NULL</td>
+                <td>Roseburg</td>
+                <td>OR</td>
+                <td>97471</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+</html>

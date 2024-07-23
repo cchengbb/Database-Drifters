@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="../style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Events</h1>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="dogs.html">Dogs</a>
+        <a href="adopters.html">Adopters</a>
+        <a href="events.html">Events</a>
+        <a href="locations.html">Locations</a>
+        <a href="vaccinations.html">Vaccinations</a>
+        <a href="dogsAtEvents.html">DogsAtEvents</a>
+    </nav>
+
+    <section class="container">
+        <button id="toggleFormButton">Add/Update Event</button>
+
+        <input type="text" id="searchInput" placeholder="Search">
+        
+        <form data-entity="event" class="entity-form">
+            <div class="form-group">
+                <label for="eventId">Event ID:</label>
+                <input type="text" id="eventId" name="eventId" required>
+            </div>
+            <div class="form-group">
+                <label for="locationId">Location ID:</label>
+                <input type="text" id="locationId" name="locationId" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <button type="submit">Add/Update Event</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Event ID</th>
+                <th>Location ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Tuxes and Tails</td>
+                <td>2024-05-17</td>
+                <td>Annual fundraising gala showcasing pets and hosting live auctions</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>Adoption Day</td>
+                <td>2024-09-01</td>
+                <td>Annual Adoption Event</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>Fun Walk</td>
+                <td>2024-10-05</td>
+                <td>Community Walk for Dogs and Adopters</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1</td>
+                <td>Fundraiser Gala</td>
+                <td>2024-11-15</td>
+                <td>Gala to raise Funds for FCAT Shelter</td>
+                <td>
+                    <button onclick="editEntity(this)">Edit</button>
+                    <button onclick="deleteEntity(this)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+</html>
