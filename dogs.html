@@ -2,278 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Furever Dog Adoptions</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script language="JavaScript">
-        function showForm(action) {
-            document.getElementById('browseDogs').style.display = (action === 'browse') ? 'block' : 'none';
-            document.getElementById('addDog').style.display = (action === 'insert') ? 'block' : 'none';
-            document.getElementById('updateDog').style.display = (action === 'update') ? 'block' : 'none';
-            document.getElementById('deleteDog').style.display = (action === 'delete') ? 'block' : 'none';
-        }
-
-        function setDogId(dogId, dogName) {
-            document.getElementById('updateDogId').value = dogId;
-            document.getElementById('deleteDogId').value = dogId;
-            document.getElementById('deleteDogName').textContent = 'Are you sure you want to delete ' + dogName + '?';
-        }
-
-        function browseDogs() { showForm('browse'); }
-        function newDog() { showForm('insert'); }
-        function updateDog(dogId, dogName) { setDogId(dogId, dogName); showForm('update'); }
-        function deleteDog(dogId, dogName) { setDogId(dogId, dogName); showForm('delete'); }
-
-        function showForm(action) {
-            var displaySetting = (action === 'all') ? 'block' : 'none';  
-            document.getElementById('browseDogs').style.display = (action === 'browse' || action === 'all') ? 'block' : 'none';
-            document.getElementById('addDog').style.display = (action === 'insert' || action === 'all') ? 'block' : 'none';
-            document.getElementById('updateDog').style.display = (action === 'update' || action === 'all') ? 'block' : 'none';
-            document.getElementById('deleteDog').style.display = (action === 'delete' || action === 'all') ? 'block' : 'none';
-        }
-
-        function showAll() {
-            showForm('all');  // Sets all sections to display.
-        }   
-        function filterDogs() {
-            var input = document.getElementById('searchQuery');
-            var filter = input.value.toUpperCase();
-            var table = document.getElementById('browseDogs');
-            var tr = table.getElementsByTagName('tr');
-
-        for (var i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
-            var tds = tr[i].getElementsByTagName('td');
-            var found = false;
-            for (var j = 0; j < tds.length; j++) {
-                if (tds[j].textContent.toUpperCase().indexOf(filter) > -1) {
-                    found = true;
-                    break;
-                }
-            }
-            tr[i].style.display = found ? "" : "none";
-        }
-    }
-
-document.getElementById('searchQuery').addEventListener('keyup', filterDogs);
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs</title>
+    <link href="../style.css" rel="stylesheet" />
 </head>
-<body onload="browseDogs()">
+<body>
+    <h1>Dogs</h1>
+
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dogs.html">Dogs</a></li>
-            <li><a href="adopters.html">Adopters</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="vaccinations.html">Vaccinations</a></li>
-        </ul>
+        <a href="../index.html">Home</a>
+        <a href="dogs.html">Dogs</a>
+        <a href="adopters.html">Adopters</a>
+        <a href="events.html">Events</a>
+        <a href="locations.html">Locations</a>
+        <a href="vaccinations.html">Vaccinations</a>
     </nav>
 
-    <h1>Dogs</h1>
-    <p class="display-all-link"><a href="#" onClick="showAll()">Display all forms</a></p>
-    <!-- Browse Section -->
-    <div id="browseDogs">
-        <table border="1" cellpadding="5">
+    <section class="container">
+        <button id="toggleFormButton">Add/Update Dog</button>
+        <form data-entity="dog" class="entity-form">
+            <div class="form-group">
+                <label for="dogId">Dog ID:</label>
+                <input type="text" id="dogId" name="dogId" required>
+            </div>
+            <div class="form-group">
+                <label for="adopterId">Adopter ID:</label>
+                <input type="text" id="adopterId" name="adopterId">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed:</label>
+                <input type="text" id="breed" name="breed" required>
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <input type="text" id="sex" name="sex" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="healthStatus">Health Status:</label>
+                <input type="text" id="healthStatus" name="healthStatus" required>
+            </div>
+            <button type="submit">Add/Update Dog</button>
+        </form>
+
+        <table>
             <tr>
                 <th>Dog ID</th>
+                <th>Adopter ID</th>
                 <th>Name</th>
                 <th>Breed</th>
                 <th>Sex</th>
                 <th>Date of Birth</th>
                 <th>Health Status</th>
-                <th>AdopterID</th>
                 <th>Actions</th>
             </tr>
-            <!-- Example Row -->
             <tr>
+                <td>1</td>
                 <td>1</td>
                 <td>Annie</td>
                 <td>Bichon</td>
                 <td>Female</td>
                 <td>2018-07-01</td>
                 <td>Healthy</td>
-                <td>1</td>
-                <td>
-                    <a href="#" onClick="updateDog('1', 'Annie')">Edit</a> |
-                    <a href="#" onClick="deleteDog('1', 'Annie')">Delete</a>
-                </td>
+                <td><button onclick="editEntity(this)">Edit</button></td>
             </tr>
             <tr>
+                <td>2</td>
                 <td>2</td>
                 <td>Argos</td>
                 <td>Labrador</td>
                 <td>Male</td>
                 <td>2020-06-01</td>
                 <td>Recovering</td>
-                <td>2</td>
-                <td>
-                    <a href="#" onClick="updateDog('2', 'Argos')">Edit</a> |
-                    <a href="#" onClick="deleteDog('2', 'Argos')">Delete</a>
-                </td>
+                <td><button onclick="editEntity(this)">Edit</button></td>
             </tr>
             <tr>
                 <td>3</td>
+                <td>2</td>
                 <td>Floppy</td>
                 <td>Poodle</td>
                 <td>Male</td>
                 <td>2019-11-30</td>
                 <td>Healthy</td>
-                <td>2</td>
-                <td>
-                    <a href="#" onClick="updateDog('3', 'Floppy')">Edit</a> |
-                    <a href="#" onClick="deleteDog('3', 'Floppy')">Delete</a>
-                </td>
+                <td><button onclick="editEntity(this)">Edit</button></td>
             </tr>
             <tr>
                 <td>4</td>
+                <td>3</td>
                 <td>Enzo</td>
                 <td>Chihuahua</td>
                 <td>Male</td>
                 <td>2018-02-24</td>
                 <td>Obese</td>
-                <td>3</td>
-                <td>
-                    <a href="#" onClick="updateDog('4', 'Enzo')">Edit</a> |
-                    <a href="#" onClick="deleteDog('4', 'Enzo')">Delete</a>
-                </td>
+                <td><button onclick="editEntity(this)">Edit</button></td>
             </tr>
             <tr>
                 <td>5</td>
+                <td>NULL</td>
                 <td>Luna</td>
                 <td>Beagle</td>
                 <td>Female</td>
                 <td>2022-05-07</td>
                 <td>Healthy</td>
-                <td>NULL</td>
-                <td>
-                    <a href="#" onClick="updateDog('5', 'Luna')">Edit</a> |
-                    <a href="#" onClick="deleteDog('5', 'Luna')">Delete</a>
-                </td>
+                <td><button onclick="editEntity(this)">Edit</button></td>
             </tr>
         </table>
-    </div>
-    <!-- Button to Show Add Dog Form -->
-    <div id="addDogButtonContainer" style="text-align: center; margin: 20px;">
-        <button onclick="newDog()">Add New Dog</button>
-    </div>
+    </section>
 
-
-    <!-- Add Dog Form -->
-    <div id="addDog" style="display:none;">
-        <form method="POST" action="/add-dog">
-            <legend><strong>Add Dog</strong></legend>
-            <fieldset>
-            <!-- Dog Name Field -->
-            <div>
-                <label for="addDogName">Dog Name:</label>
-                <input type="text" id="addDogName" name="dogName" required>
-            </div>
-
-            <!-- Breed Field -->
-            <div>
-                <label for="addBreed">Breed:</label>
-                <input type="text" id="addBreed" name="breed" required>
-            </div>
-
-            <!-- Sex Field -->
-            <div>
-                <label for="addSex">Sex:</label>
-                <select id="addSex" name="sex" required>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-
-            <!-- Date of Birth Field -->
-            <div>
-                <label for="addDateOfBirth">Date of Birth:</label>
-                <input type="date" id="addDateOfBirth" name="dateOfBirth" required>
-            </div>
-
-            <!-- Health Status Field -->
-            <div>
-                <label for="addHealthStatus">Health Status:</label>
-                <input type="text" id="addHealthStatus" name="healthStatus" required>
-            </div>
-
-            <!-- Adopter ID Field (Optional) -->
-            <div>
-                <label for="addAdopterID">Adopter ID (Optional):</label>
-                <input type="number" id="addAdopterID" name="adopterID">
-            </div>
-
-            </fieldset>
-            <input type="submit" value="Add Dog">
-            <button type="button" onClick="browseDogs()">Cancel</button>
-        </form>
-    </div>
-
-    <!-- Update Dog Form -->
-    <div id="updateDog" style="display:none;">
-        <form method="POST" action="/update-dog">
-            <legend><strong>Update Dog</strong></legend>
-            <fieldset>
-                <input type="hidden" id="updateDogId" name="dogID">
-                
-                <!-- Dog Name Field -->
-                <div>
-                    <label for="updateDogName">Dog Name:</label>
-                    <input type="text" id="updateDogName" name="dogName" required>
-                </div>
-                
-                <!-- Breed Field -->
-                <div>
-                    <label for="updateBreed">Breed:</label>
-                    <input type="text" id="updateBreed" name="breed" required>
-                </div>
-                
-                <!-- Sex Field -->
-                <div>
-                    <label for="updateSex">Sex:</label>
-                    <select id="updateSex" name="sex" required>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-                
-                <!-- Date of Birth Field -->
-                <div>
-                    <label for="updateDateOfBirth">Date of Birth:</label>
-                    <input type="date" id="updateDateOfBirth" name="dateOfBirth" required>
-                </div>
-                
-                <!-- Health Status Field -->
-                <div>
-                    <label for="updateHealthStatus">Health Status:</label>
-                    <input type="text" id="updateHealthStatus" name="healthStatus" required>
-                </div>
-                
-                <!-- Adopter ID Field (Optional) -->
-                <div>
-                    <label for="updateAdopterID">Adopter ID (Optional):</label>
-                    <input type="number" id="updateAdopterID" name="adopterID">
-                </div>
-            </fieldset>
-            <input type="submit" value="Update Dog">
-            <button type="button" onclick="browseDogs()">Cancel</button>
-        </form>
-    </div>
-
-    <!-- Delete Dog Form -->
-    <div id="deleteDog" style="display:none;">
-        <form method="POST" action="/delete-dog">
-            <legend><strong>Delete Dog</strong></legend>
-            <input type="hidden" id="deleteDogId" name="dogID">
-            <p id="deleteDogName"></p>
-            <input type="submit" value="Delete Dog">
-            <button type="button" onClick="browseDogs()">Cancel</button>
-        </form>
-    </div>
-    <!-- Search Form -->
-    <div id="searchDogs">
-        <form action="/search-dogs" method="GET">
-            <input type="text" id="searchQuery" name="searchQuery" placeholder="Search Dogs by name, breed..." required>
-            <button type="submit">Search</button>
-        </form>
-    </div>
+    <script src="../script.js"></script>
 </body>
 </html>
