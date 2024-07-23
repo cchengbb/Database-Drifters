@@ -63,6 +63,13 @@ h2 {
     margin-bottom: 20px;
 }
 
+p {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
 table {
     width: 100%;
     margin: 20px 0;
