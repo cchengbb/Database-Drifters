@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dogs</title>
     <link href="../style.css" rel="stylesheet" />
 </head>
+
 <body>
     <h1>Dogs</h1>
 
@@ -31,7 +33,13 @@
             </div>
             <div class="form-group">
                 <label for="adopterId">Adopter ID:</label>
-                <input type="text" id="adopterId" name="adopterId">
+                <select id="adopterId" name="adopterId" required>
+                    <option value="1">Shelly Williamson</option>
+                    <option value="2">Kathleen Randall</option>
+                    <option value="3">Claude Herman</option>
+                    <option value="4">Adam Payne</option>
+                    <option value="5">Alyson Montgomery</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -137,4 +145,5 @@
 
     <script src="../script.js"></script>
 </body>
+
 </html>
