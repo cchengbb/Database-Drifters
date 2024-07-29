@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DogsAtEvents</title>
     <link href="../style.css" rel="stylesheet" />
 </head>
+
 <body>
     <h1>DogsAtEvents</h1>
 
@@ -26,55 +28,43 @@
 
         <form data-entity="dog" class="entity-form">
             <div class="form-group">
-                <label for="dogId">Dog ID:</label>
+                <label for="dogId">DogEventID:</label>
                 <input type="text" id="dogId" name="dogId" required>
             </div>
             <div class="form-group">
-                <label for="adopterId">Adopter ID:</label>
-                <input type="text" id="adopterId" name="adopterId">
+                <label for="dogID">Dog ID:</label>
+                <select id="dogID" name="dogID" required>
+                    <option value="1">Annie</option>
+                    <option value="2">Argos</option>
+                    <option value="3">Floppy</option>
+                    <option value="4">Enzo</option>
+                    <option value="5">Luna</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="eventID">Event ID:</label>
+                <select id="eventID" name="eventID" required>
+                    <option value="1">Tuxes and Tails</option>
+                    <option value="2">Adoption Day</option>
+                    <option value="3">Fun Walks</option>
+                    <option value="4">Fundraiser Gala</option>
+                    <option value="5">Pet Expo</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="breed">Breed:</label>
-                <input type="text" id="breed" name="breed" required>
-            </div>
-            <div class="form-group">
-                <label for="sex">Sex:</label>
-                <input type="text" id="sex" name="sex" required>
-            </div>
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-            <div class="form-group">
-                <label for="healthStatus">Health Status:</label>
-                <input type="text" id="healthStatus" name="healthStatus" required>
-            </div>
-            <button type="submit">Add/Update Dog</button>
+            <button type="submit">Add/Update DogAtEvents</button>
         </form>
 
         <table>
             <tr>
+                <th>DogEvent ID</th>
                 <th>Dog ID</th>
-                <th>Adopter ID</th>
-                <th>Name</th>
-                <th>Breed</th>
-                <th>Sex</th>
-                <th>Date of Birth</th>
-                <th>Health Status</th>
+                <th>Event ID</th>
                 <th>Actions</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>1</td>
-                <td>Annie</td>
-                <td>Bichon</td>
-                <td>Female</td>
-                <td>2018-07-01</td>
-                <td>Healthy</td>
+                <td>1</td>
                 <td>
                     <button onclick="editEntity(this)">Edit</button>
                     <button onclick="deleteEntity(this)">Delete</button>
@@ -83,11 +73,7 @@
             <tr>
                 <td>2</td>
                 <td>2</td>
-                <td>Argos</td>
-                <td>Labrador</td>
-                <td>Male</td>
-                <td>2020-06-01</td>
-                <td>Recovering</td>
+                <td>1</td>
                 <td>
                     <button onclick="editEntity(this)">Edit</button>
                     <button onclick="deleteEntity(this)">Delete</button>
@@ -95,12 +81,8 @@
             </tr>
             <tr>
                 <td>3</td>
+                <td>3</td>
                 <td>2</td>
-                <td>Floppy</td>
-                <td>Poodle</td>
-                <td>Male</td>
-                <td>2019-11-30</td>
-                <td>Healthy</td>
                 <td>
                     <button onclick="editEntity(this)">Edit</button>
                     <button onclick="deleteEntity(this)">Delete</button>
@@ -109,11 +91,7 @@
             <tr>
                 <td>4</td>
                 <td>3</td>
-                <td>Enzo</td>
-                <td>Chihuahua</td>
-                <td>Male</td>
-                <td>2018-02-24</td>
-                <td>Obese</td>
+                <td>3</td>
                 <td>
                     <button onclick="editEntity(this)">Edit</button>
                     <button onclick="deleteEntity(this)">Delete</button>
@@ -121,12 +99,8 @@
             </tr>
             <tr>
                 <td>5</td>
-                <td>NULL</td>
-                <td>Luna</td>
-                <td>Beagle</td>
-                <td>Female</td>
-                <td>2022-05-07</td>
-                <td>Healthy</td>
+                <td>4</td>
+                <td>4</td>
                 <td>
                     <button onclick="editEntity(this)">Edit</button>
                     <button onclick="deleteEntity(this)">Delete</button>
@@ -137,4 +111,5 @@
 
     <script src="../script.js"></script>
 </body>
+
 </html>
